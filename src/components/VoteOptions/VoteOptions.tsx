@@ -12,11 +12,11 @@ export default function VoteOptions({ onVote, onReset, canReset }: VoteOptionsPr
     
   return (
     <div className={css.container}>
-      <button className={css.button} onClick={() => onVote('good')}>Good</button>
-      <button className={css.button} onClick={() => onVote('neutral')}>Neutral</button>
-      <button className={css.button} onClick={() => onVote('bad')}>Bad</button>
+      <button type="button" className={css.button} onClick={() => onVote('good')} aria-label="Vote for good service">Good</button>
+      <button type="button" className={css.button} onClick={() => onVote('neutral')} aria-label="Vote for neutral service">Neutral</button>
+      <button type="button" className={css.button} onClick={() => onVote('bad')} aria-label="Vote for bad service">Bad</button>
           {canReset && (
-              <button className={`${css.button} ${css.reset}`} onClick={onReset}>Reset</button>
+              <button type="button" className={`${css.button} ${css.reset}`} onClick={onReset} aria-label="Reset all votes">Reset</button>
           )}
     </div>
   );
